@@ -21,9 +21,6 @@ export class Server
         this.initData = null
         this.events = new Events()
         document.documentElement.classList.add('is-server-offline')
-
-        // ✅ ADD
-        this._connecting = false
     }
 
     start()
@@ -44,26 +41,11 @@ export class Server
 
     connect()
     {
-        // ✅ ADD – prevent duplicate connections
-        if(this._connecting)
-            return
-
-        if(this.socket &&
-           (this.socket.readyState === WebSocket.OPEN ||
-            this.socket.readyState === WebSocket.CONNECTING))
-            return
-
-        // ✅ ADD
-        this._connecting = true
-
         this.socket = new WebSocket(import.meta.env.VITE_SERVER_URL)
         this.socket.binaryType = 'arraybuffer'
 
         this.socket.addEventListener('open', () =>
         {
-            // ✅ ADD
-            this._connecting = false
-
             this.connected = true
             document.documentElement.classList.remove('is-server-offline')
             document.documentElement.classList.add('is-server-online')
@@ -96,9 +78,6 @@ export class Server
             // On close
             this.socket.addEventListener('close', () =>
             {
-                // ✅ ADD
-                this._connecting = false
-
                 document.documentElement.classList.add('is-server-offline')
                 document.documentElement.classList.remove('is-server-online')
                 this.connected = false
@@ -121,18 +100,12 @@ export class Server
                 this.events.trigger('disconnected')
             })
         })
-
-        // ✅ ADD – error handling (important on Render restarts)
-        this.socket.addEventListener('error', () =>
-        {
-            this._connecting = false
-            this.connected = false
-        })
     }
 
     onReceive(message)
     {
         const data = this.decode(message.data)
+    
     
         if(this.initData === null)
             this.initData = data

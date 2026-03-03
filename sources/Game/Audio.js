@@ -150,15 +150,15 @@ export class Audio
         this.playlist.songs = [
             {
                 path: 'sounds/musics/Sudo.mp3',
-                name: 'Sudo.mp3'
+                name: 'bhairav.mp3'
             },
             {
                 path: 'sounds/musics/Boy.mp3',
-                name: 'Boy.mp3'
+                name: 'Siddu.mp3'
             },
             {
-                path: 'sounds/musics/Baguira.mp3',
-                name: 'Baguira.mp3'
+                path: 'sounds/musics/Bhairava.mp3',
+                name: 'Bhairava.mp3'
             },
             {
                 path: 'sounds/musics/NO-BATIDAO.mp3',

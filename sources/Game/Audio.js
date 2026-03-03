@@ -4,7 +4,6 @@ import { Game } from './Game.js'
 import { remap, remapClamp, clamp } from './utilities/maths.js'
 import gsap from 'gsap'
 import { Events } from './Events.js'
-import { path } from 'framer-motion/client'
 
 export class Audio
 {

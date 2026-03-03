@@ -1,0 +1,17 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm i --force",
+  "framework": "vite",
+  "outputDirectory": "dist",
+  "env": {
+    "VITE_SERVER_URL": "@vite_server_url",
+    "VITE_ANALYTICS_TAG": "@vite_analytics_tag",
+    "VITE_GAME_PUBLIC": "@vite_game_public",
+    "VITE_DAY_CYCLE_PROGRESS": "@vite_day_cycle_progress",
+    "VITE_YEAR_CYCLE_PROGRESS": "@vite_year_cycle_progress",
+    "VITE_WHISPERS_COUNT": "@vite_whispers_count",
+    "VITE_MUSIC": "@vite_music",
+    "VITE_PLAYER_SPAWN": "@vite_player_spawn"
+  }
+}

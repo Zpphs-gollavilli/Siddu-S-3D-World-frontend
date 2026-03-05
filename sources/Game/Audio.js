@@ -150,27 +150,15 @@ export class Audio
         this.playlist.songs = [
             {
                 path: 'sounds/musics/Sudo.mp3',
-                name: 'bhairav.mp3'
+                name: 'Sudo.mp3'
             },
             {
                 path: 'sounds/musics/Boy.mp3',
-                name: 'Siddu.mp3'
+                name: 'Boy.mp3'
             },
             {
-                path: 'sounds/musics/Bhairava.mp3',
-                name: 'Bhairava.mp3'
-            },
-            {
-                path: 'sounds/musics/NO-BATIDAO.mp3',
-                name: 'NO-BATIDAO.mp3'
-            },
-            {
-                path: 'sounds/musics/Thellarindoi.mp3',
-                name: 'Thellarindoi.mp3'
-            },
-            {
-                path: 'sounds/musics/master.mp3',
-                name: 'master.mp3'
+                path: 'sounds/musics/Baguira.mp3',
+                name: 'Baguira.mp3'
             },
         ]
         this.playlist.index = (Math.floor(Date.now() / 1000 / 60 / 3) % this.playlist.songs.length) // Different music every X minutes
